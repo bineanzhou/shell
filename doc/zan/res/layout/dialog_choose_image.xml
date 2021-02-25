@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_choose_image_dialog_corner" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="15.0sp" android:textColor="@color/black_282b33" android:id="@id/album" android:background="@drawable/btn_white_corner" android:layout_width="fill_parent" android:layout_height="69.0dip" android:text="@string/album" style="?android:borderlessButtonStyle" />
+    <View android:background="@color/divider_line_color" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <Button android:textSize="15.0sp" android:textColor="@color/black_282b33" android:id="@id/camera" android:background="@drawable/btn_white_corner" android:layout_width="fill_parent" android:layout_height="70.0dip" android:text="@string/camera" style="?android:borderlessButtonStyle" />
+    <View android:background="@color/divider_line_color" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <Button android:textSize="15.0sp" android:textColor="@color/black_282b33" android:id="@id/cancel" android:background="@drawable/btn_white_corner" android:layout_width="fill_parent" android:layout_height="69.0dip" android:text="@string/cancel" style="?android:borderlessButtonStyle" />
+</LinearLayout>

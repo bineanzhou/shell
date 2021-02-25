@@ -1,0 +1,26 @@
+// See README.txt for information and build instructions.
+
+package tutorial;
+
+option java_package = "com.umeng.message.protobuffer";
+option java_outer_classname = "PushResponse";
+
+message PushResponse {
+
+  enum responseCode {
+    SUCCESS = 0;
+    INVALID_REQUEST = 1;
+    SERVER_EXCEPTION = 2;
+  }
+  optional responseCode code = 1;
+  optional string description = 2;
+
+  message Info{
+    optional int32 launchPolicy = 1;
+    optional int32 tagPolicy = 2;
+    optional string deviceTokens = 3;
+    optional int32 tagRemainCount = 4;
+    optional string tags = 5;
+  }
+  optional Info info = 3;
+}
