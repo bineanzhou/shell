@@ -37,64 +37,70 @@
 
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .locals 5
+    .registers 10
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
+    .param p2, "i"    # I
+    .param p3, "z"    # Z
 
     .prologue
-    const/4 v0, 0x1
+    .line 325
+    const/4 v0, 0x0
 
     .line 326
-    const-string v1, "Comment progress=%d"
+    .local v0, "i2":I
+    const-string v2, "Comment progress=%d"
 
-    new-array v2, v0, [Ljava/lang/Object;
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    invoke-static {v1, v2}, Ltimber/log/Timber;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v3}, Ltimber/log/Timber;->b(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 327
-    add-int/lit8 v1, p2, 0xa
+    add-int/lit8 v2, p2, 0xa
 
-    div-int/lit8 v1, v1, 0x14
+    div-int/lit8 v1, v2, 0x14
 
     .line 328
-    if-nez v1, :cond_0
+    .local v1, "i3":I
+    if-eqz v1, :cond_17
+
+    .line 330
+    move v0, v1
 
     .line 331
-    :goto_0
-    iget-object v1, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity$6;->a:Lcom/open/likehelper/ui/edit/EditMomentActivity;
+    :cond_17
+    iget-object v2, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity$6;->a:Lcom/open/likehelper/ui/edit/EditMomentActivity;
 
-    invoke-static {v1, v0}, Lcom/open/likehelper/ui/edit/EditMomentActivity;->c(Lcom/open/likehelper/ui/edit/EditMomentActivity;I)I
+    invoke-static {v2, v0}, Lcom/open/likehelper/ui/edit/EditMomentActivity;->c(Lcom/open/likehelper/ui/edit/EditMomentActivity;I)I
 
     .line 332
-    iget-object v0, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity$6;->a:Lcom/open/likehelper/ui/edit/EditMomentActivity;
+    iget-object v2, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity$6;->a:Lcom/open/likehelper/ui/edit/EditMomentActivity;
 
-    iget-object v0, v0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->mCommentCountText:Landroid/widget/TextView;
+    iget-object v2, v2, Lcom/open/likehelper/ui/edit/EditMomentActivity;->mCommentCountText:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity$6;->a:Lcom/open/likehelper/ui/edit/EditMomentActivity;
+    iget-object v3, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity$6;->a:Lcom/open/likehelper/ui/edit/EditMomentActivity;
 
-    invoke-static {v1}, Lcom/open/likehelper/ui/edit/EditMomentActivity;->e(Lcom/open/likehelper/ui/edit/EditMomentActivity;)I
+    invoke-static {v3}, Lcom/open/likehelper/ui/edit/EditMomentActivity;->e(Lcom/open/likehelper/ui/edit/EditMomentActivity;)I
 
-    move-result v1
+    move-result v3
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 333
     return-void
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
