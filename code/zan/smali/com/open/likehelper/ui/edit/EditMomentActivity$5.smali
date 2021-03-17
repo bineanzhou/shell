@@ -37,33 +37,37 @@
 
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .locals 5
+    .registers 8
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
+    .param p2, "i"    # I
+    .param p3, "z"    # Z
 
     .prologue
-    const/4 v0, 0x1
-
     .line 304
-    const-string v1, "Like progress=%d"
+    const-string v0, "Like progress=%d"
 
-    new-array v2, v0, [Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v2, v3
+    aput-object v3, v1, v2
 
-    invoke-static {v1, v2}, Ltimber/log/Timber;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Ltimber/log/Timber;->b(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 305
-    if-nez p2, :cond_0
+    if-nez p2, :cond_12
 
-    move p2, v0
+    .line 307
+    const/4 p2, 0x0
 
     .line 308
-    :cond_0
+    :cond_12
     iget-object v0, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity$5;->a:Lcom/open/likehelper/ui/edit/EditMomentActivity;
 
     invoke-static {v0, p2}, Lcom/open/likehelper/ui/edit/EditMomentActivity;->b(Lcom/open/likehelper/ui/edit/EditMomentActivity;I)I

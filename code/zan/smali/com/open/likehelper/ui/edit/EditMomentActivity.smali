@@ -1272,138 +1272,151 @@
 .end method
 
 .method private j()V
-    .locals 6
+    .registers 11
 
     .prologue
-    .line 435
-    iget-object v0, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->i:Lcom/google/gson/Gson;
+    .line 34
+    iget-object v5, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->i:Lcom/google/gson/Gson;
 
-    const-string v1, "nickname.json"
+    const-string v6, "nickname.json"
 
-    invoke-static {p0, v1}, Lcom/open/likehelper/util/FileUtils;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v6}, Lcom/open/likehelper/util/FileUtils;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v6
 
-    new-instance v2, Lcom/open/likehelper/ui/edit/EditMomentActivity$10;
+    new-instance v7, Lcom/open/likehelper/ui/edit/EditMomentActivity$10;
 
-    invoke-direct {v2, p0}, Lcom/open/likehelper/ui/edit/EditMomentActivity$10;-><init>(Lcom/open/likehelper/ui/edit/EditMomentActivity;)V
+    invoke-direct {v7, p0}, Lcom/open/likehelper/ui/edit/EditMomentActivity$10;-><init>(Lcom/open/likehelper/ui/edit/EditMomentActivity;)V
 
-    .line 437
-    invoke-virtual {v2}, Lcom/open/likehelper/ui/edit/EditMomentActivity$10;->getType()Ljava/lang/reflect/Type;
+    .line 36
+    invoke-virtual {v7}, Lcom/open/likehelper/ui/edit/EditMomentActivity$10;->getType()Ljava/lang/reflect/Type;
 
-    move-result-object v2
+    move-result-object v7
 
-    .line 435
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+    .line 34
+    invoke-virtual {v5, v6, v7}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v4
 
-    check-cast v0, Ljava/util/List;
+    check-cast v4, Ljava/util/List;
 
-    .line 439
-    if-eqz v0, :cond_2
+    .line 37
+    .local v4, "list":Ljava/util/List;
+    if-eqz v4, :cond_72
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-interface {v4}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v5
 
-    const/16 v2, 0x64
+    const/16 v6, 0x64
 
-    if-le v1, v2, :cond_2
+    if-le v5, v6, :cond_72
 
-    .line 440
+    .line 38
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 442
-    :cond_0
+    .line 40
+    .local v1, "hashSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/Integer;>;"
+    :cond_26
     invoke-static {}, Ljava/lang/Math;->random()D
 
-    move-result-wide v2
+    move-result-wide v6
 
-    const-wide/high16 v4, 0x4059000000000000L    # 100.0
+    const-wide/high16 v8, 0x4059000000000000L    # 100.0
 
-    mul-double/2addr v2, v4
+    mul-double/2addr v6, v8
 
-    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
 
-    add-double/2addr v2, v4
+    add-double/2addr v6, v8
 
-    double-to-int v2, v2
+    double-to-int v5, v6
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 443
-    invoke-interface {v1}, Ljava/util/Set;->size()I
+    .line 41
+    invoke-virtual {v1}, Ljava/util/HashSet;->size()I
 
-    move-result v2
+    move-result v5
 
-    iget v3, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->j:I
+    iget v6, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->j:I
 
-    if-lt v2, v3, :cond_0
+    if-lt v5, v6, :cond_26
 
-    .line 448
-    new-instance v2, Ljava/util/ArrayList;
+    .line 42
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 449
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    .line 46
+    .local v0, "arrayList":Ljava/util/ArrayList;
+    invoke-virtual {v1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    .line 47
+    .local v3, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/Integer;>;"
+    const/4 v2, 0x0
 
-    move-result v1
+    .local v2, "i":I
+    :goto_4a
+    iget v5, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->j:I
 
-    if-eqz v1, :cond_1
+    if-ge v2, v5, :cond_62
 
+    .line 49
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v5
 
-    check-cast v1, Ljava/lang/Integer;
+    check-cast v5, Ljava/lang/Integer;
 
-    .line 450
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v5
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    .line 47
+    add-int/lit8 v2, v2, 0x1
 
-    .line 452
-    :cond_1
-    iget-object v0, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->g:Lcom/open/likehelper/bean/MomentBean;
+    goto :goto_4a
 
-    invoke-virtual {v0, v2}, Lcom/open/likehelper/bean/MomentBean;->setLike(Ljava/util/List;)V
+    .line 51
+    :cond_62
+    iget-object v5, p0, Lcom/open/likehelper/ui/edit/EditMomentActivity;->g:Lcom/open/likehelper/bean/MomentBean;
 
-    .line 453
-    const-string v0, "likeNames=%s"
+    invoke-virtual {v5, v0}, Lcom/open/likehelper/bean/MomentBean;->setLike(Ljava/util/List;)V
 
-    const/4 v1, 0x1
+    .line 52
+    const-string v5, "likeNames=%s"
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v6, 0x1
 
-    const/4 v3, 0x0
+    new-array v6, v6, [Ljava/lang/Object;
 
-    aput-object v2, v1, v3
+    const/4 v7, 0x0
 
-    invoke-static {v0, v1}, Ltimber/log/Timber;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v6, v7
 
-    .line 455
-    :cond_2
+    invoke-static {v5, v6}, Ltimber/log/Timber;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 54
+    .end local v0    # "arrayList":Ljava/util/ArrayList;
+    .end local v1    # "hashSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/Integer;>;"
+    .end local v2    # "i":I
+    .end local v3    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/Integer;>;"
+    :cond_72
     return-void
 .end method
 
