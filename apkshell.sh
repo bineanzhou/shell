@@ -11,7 +11,7 @@ if [ "$APK_NAME" = "" ]; then
     APK_NAME="snakemerge_9"
 fi
 INPUT_APK=input/${APK_NAME}.apk
-OUTPUT_PATH=output
+WORK_PATH=code
 OUTPUT_APK=output/${APK_NAME}_new.apk
 
 echo "参数：$ACTION"
@@ -26,7 +26,7 @@ fi
 if [ "$ACTION" = "b" ] || [ "$ACTION" = "a" ]; then
     # 删除文件 打包
     rm -r -f $OUTPUT_APK
-    apktool b $OUTPUT_PATH/$APK_NAME -o $OUTPUT_APK
+    apktool b $WORK_PATH/$APK_NAME -o $OUTPUT_APK
 fi
 
 if [ "$ACTION" = "sign" ] || [ "$ACTION" = "a" ]; then
