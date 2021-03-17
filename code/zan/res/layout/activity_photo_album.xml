@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/title_bar" layout="@layout/layout_white_center_top_bar" />
+    <View android:background="@color/color_efefef" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <View android:background="@color/color_f6f6f6" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+    <View android:background="@color/color_efefef" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <android.support.v7.widget.RecyclerView android:id="@id/album_list" android:background="@color/white_ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

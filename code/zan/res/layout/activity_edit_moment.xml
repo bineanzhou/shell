@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white_ffffff">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.open.likehelper.widget.TitleBar
+            android:id="@id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_f9f9f9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="18.0dip"
+            android:paddingTop="18.0dip"
+            android:paddingRight="18.0dip"
+            android:paddingBottom="18.0dip">
+
+            <ImageView
+                android:id="@id/avatar"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:src="@drawable/icon_default_avatar" />
+
+            <EditText
+                android:id="@id/nickname"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_weight="1.0"
+                android:background="@android:color/transparent"
+                android:hint="@string/setting_nickname"
+                android:singleLine="true"
+                android:textColor="@color/black_666666"
+                android:textColorHint="@color/grey_d2d2d2"
+                android:textSize="24.0sp" />
+
+            <TextView
+                android:id="@id/getInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="45.0dip"
+                android:layout_marginLeft="5.0dip"
+                android:background="@drawable/bg_53d44c_corner_15"
+                android:gravity="center"
+                android:paddingLeft="18.0dip"
+                android:paddingRight="18.0dip"
+                android:text="@string/get_from_wechat"
+                android:textColor="@color/white_ffffff"
+                android:textSize="18.0sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:background="@color/grey_e5e5e5" />
+
+        <EditText
+            android:id="@id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            android:gravity="top"
+            android:hint="@string/this_moment_thinking"
+            android:paddingLeft="18.0dip"
+            android:paddingTop="15.0dip"
+            android:paddingRight="18.0dip"
+            android:paddingBottom="15.0dip"
+            android:textColor="@color/black_666666"
+            android:textColorHint="@color/grey_d2d2d2"
+            android:textSize="18.0sp" />
+
+        <com.open.likehelper.widget.GridViewForScrollView
+            android:id="@id/photo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18.0dip"
+            android:layout_marginRight="18.0dip"
+            android:columnWidth="80.0dip"
+            android:gravity="center"
+            android:horizontalSpacing="5.0dip"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="4"
+            android:padding="0.0dip"
+            android:scrollbars="none"
+            android:stretchMode="none"
+            android:verticalSpacing="5.0dip" />
+
+        <TextView
+            android:id="@id/location"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_location"
+            android:drawableRight="@drawable/icon_location_more"
+            android:drawablePadding="5.0dip"
+            android:paddingLeft="18.0dip"
+            android:paddingTop="12.0dip"
+            android:paddingRight="18.0dip"
+            android:paddingBottom="12.0dip"
+            android:text="@string/at_location"
+            android:textColor="@color/grey_bdbdbd"
+            android:textSize="15.0sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:background="@color/grey_e5e5e5" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="64.0dip"
+            android:layout_marginTop="8.0dip"
+            android:background="@color/white_f9f9f9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="18.0dip"
+            android:paddingRight="18.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:drawableLeft="@drawable/icon_like_count"
+                android:drawablePadding="5.0dip"
+                android:gravity="center"
+                android:text="@string/like_count"
+                android:textColor="@color/black_666666"
+                android:textSize="18.0sp" />
+
+            <SeekBar
+                android:id="@id/likeSeek"
+                style="@style/CustomSeekBarStyle" />
+
+            <TextView
+                android:id="@id/likeCount"
+                android:layout_width="30.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6.0dip"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black_666666"
+                android:textSize="18.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="64.0dip"
+            android:layout_marginTop="8.0dip"
+            android:background="@color/white_f9f9f9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="18.0dip"
+            android:paddingRight="18.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:drawableLeft="@drawable/icon_comment_count"
+                android:drawablePadding="5.0dip"
+                android:gravity="center"
+                android:text="@string/comment_count"
+                android:textColor="@color/black_666666"
+                android:textSize="18.0sp" />
+
+            <SeekBar
+                android:id="@id/commentSeek"
+                style="@style/CustomSeekBarStyle" />
+
+            <TextView
+                android:id="@id/commentCount"
+                android:layout_width="30.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6.0dip"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black_666666"
+                android:textSize="18.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/publishTimeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="64.0dip"
+            android:layout_marginTop="8.0dip"
+            android:background="@color/white_f9f9f9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="18.0dip">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="1.0"
+                android:drawableLeft="@drawable/icon_publish_time"
+                android:drawablePadding="5.0dip"
+                android:gravity="center_vertical"
+                android:text="@string/publish_time"
+                android:textColor="@color/black_666666"
+                android:textSize="18.0sp" />
+
+            <TextView
+                android:id="@id/publishTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6.0dip"
+                android:layout_marginRight="12.0dip"
+                android:gravity="center"
+                android:text="@string/thirty_minutes_ago"
+                android:textColor="@color/black_666666"
+                android:textSize="18.0sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="18.0dip"
+                android:src="@drawable/icon_location_more" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8.0dip"
+            android:background="@color/white_f9f9f9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="18.0dip"
+            android:paddingTop="15.0dip"
+            android:paddingRight="18.0dip"
+            android:paddingBottom="15.0dip">
+
+            <TextView
+                android:id="@id/createMoment"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="@drawable/bg_d44c4c_corner_5"
+                android:gravity="center"
+                android:text="@string/create_moment"
+                android:textColor="@color/white_ffffff"
+                android:textSize="24.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

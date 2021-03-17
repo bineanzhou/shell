@@ -1,0 +1,24 @@
+// See README.txt for information and build instructions.
+
+package tutorial;
+
+option java_package = "com.umeng.message.protobuffer";
+option java_outer_classname = "PushRequest";
+
+message PushRequest {
+  optional string version = 1;
+  optional string signature = 2;
+  optional int32 serialNo = 3;
+  optional int32 timestamp = 4;
+  optional string checksum = 5;
+  optional string salt = 6;
+
+  enum entityEncodingFormat {
+    JSON = 0;
+    JSON_AES = 1;
+    JSON_RSA = 2;
+  }
+
+  optional entityEncodingFormat encryption = 7;
+  optional bytes entity = 8;
+}

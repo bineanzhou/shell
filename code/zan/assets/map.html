@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<html><head lang="zh-CN"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="address=no">
+    <title>地图</title>
+</head>
+<body>
+
+<iframe id="mapPage" width="100%" frameborder="0" scrolling="no" height="589" src="http://apis.map.qq.com/tools/locpicker?search=1&type=1&key=NRUBZ-V5SRP-C4FDM-VYCNP-BXBGT-TAFLZ&referer=myapp">
+</iframe>
+<script>
+    window.addEventListener('message', function(event) {
+        // 接收位置信息，用户选择确认位置点后选点组件会触发该事件，回传用户的位置信息
+        var loc = event.data;
+        if (loc && loc.module == 'locationPicker') {//防止其他应用也会向该页面post信息，需判断module是否为'locationPicker'
+          myObj.setLoc(JSON.stringify(loc));
+        }
+    }, false);
+</script>
+</body>
+</html>

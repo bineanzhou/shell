@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/root" android:background="#ffd4e0e5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/umeng_socialize_share_titlebar" android:background="#ff0086dc" android:layout_width="fill_parent" android:layout_height="54.0dip">
+        <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/umeng_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_centerInParent="true" />
+        <RelativeLayout android:id="@id/umeng_back" android:visibility="visible" android:layout_width="50.0dip" android:layout_height="fill_parent" android:onClick="onCancel">
+            <ImageButton android:background="@drawable/umeng_socialize_back_icon" android:clickable="false" android:layout_width="12.0dip" android:layout_height="20.0dip" android:layout_marginLeft="15.0dip" android:scaleType="center" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/umeng_share_btn" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="分享" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <EditText android:textSize="15.0sp" android:textColor="#ff000000" android:gravity="top" android:id="@id/umeng_socialize_share_edittext" android:background="#ffffffff" android:paddingLeft="15.0dip" android:paddingTop="8.0dip" android:paddingRight="15.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="180.0dip" android:bufferType="spannable" android:hint="编辑分享内容" android:layout_below="@id/umeng_socialize_share_titlebar" android:lineSpacingExtra="3.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff98999b" android:gravity="right" android:id="@id/umeng_socialize_share_word_num" android:background="#ffffffff" android:paddingRight="15.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/umeng_socialize_share_edittext" android:layout_alignRight="@id/umeng_socialize_share_edittext" />
+    <RelativeLayout android:id="@id/umeng_socialize_share_bottom_area" android:background="#fff2f5f6" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_below="@id/umeng_socialize_share_word_num">
+        <RelativeLayout android:id="@id/umeng_image_edge" android:background="@drawable/umeng_socialize_edit_bg" android:layout_width="62.0dip" android:layout_height="62.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip" android:layout_centerVertical="true">
+            <ImageView android:id="@id/umeng_share_icon" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="#ff2c3035" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <TextView android:textSize="14.0sp" android:textColor="#ff575a5c" android:id="@id/umeng_web_title" android:visibility="gone" android:layout_width="280.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:singleLine="true" android:layout_toRightOf="@id/umeng_image_edge" />
+        <ImageView android:id="@id/umeng_del" android:background="@drawable/umeng_socialize_delete" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="-10.0dip" android:layout_marginRight="-10.0dip" android:layout_alignTop="@id/umeng_image_edge" android:layout_alignRight="@id/umeng_image_edge" />
+    </RelativeLayout>
+</RelativeLayout>
